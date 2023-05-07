@@ -21,6 +21,10 @@ export const StyledSection = styled.div`
   justify-content: center;
   align-items: center;
   color: white;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
 `;
 
 export const StyledTextBold = styled.p`
@@ -34,7 +38,7 @@ export const StyledTextBold = styled.p`
 
 export const StyledParagraphSpan = styled.span`
  color: #f85f36;
- font-size: 40px;
+ font-size: 25px;
  font-family: Futura;
  text-decoration: none;
  font-weight: bold;
@@ -43,6 +47,10 @@ export const StyledParagraphSpan = styled.span`
  justify-content: center;
  align-items: center;
  text-align: center;
+
+   @media (min-width: 1024px) {
+   font-size: 40px;
+  }
 `;
 
 export const StyledParagraphSpanSmall = styled.span`
@@ -83,8 +91,8 @@ export const StyledParagraphText = styled.p`
 
 export const StyledParagraphA = styled.a`
   color: #182F5D;
-  font-size: 25px;
   font-family: Futura;
+  font-size: 18px;
   text-decoration: none;
   font-weight: bold;
   display: flex;
@@ -95,6 +103,10 @@ export const StyledParagraphA = styled.a`
   margin: 10px;
   text-align: center;
   gap: 10px;
+
+  @media (min-width: 1024px) {
+   font-size: 25px;
+  }
 `;
 
 export const StyledLink = styled.a`

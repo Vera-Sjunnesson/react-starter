@@ -10,7 +10,7 @@ export const Header = () => {
         in the MoMA collection
         <StyledParagraphSpanXSmall>(the Museum of Modern Art, New York)</StyledParagraphSpanXSmall>
       </StyledParagraphA>
-      <StyledSection style={{ flexDirection: 'row' }}>
+      <StyledSection>
         <NavLink className="nav-button" to="/">HOME</NavLink>
         <NavLink className="nav-button" to="/artists">ALL ARTISTS</NavLink>
         <NavLink className="nav-button" to="/nationality">NATIONALITY</NavLink>

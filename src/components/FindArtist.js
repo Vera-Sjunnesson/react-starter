@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Details, StyledParagraphText } from './Styling';
 
 export const FindArtist = () => {
   const [details, setDetails] = useState({})
@@ -15,10 +16,11 @@ export const FindArtist = () => {
   }, [name]);
 
   return (
-    <div>
-      <h2>Name:{details?.Name}</h2>
-      <h2>Nationality:{details?.Nationality}</h2>
-      <h2>Birth Year:{details?.Birth_Year}</h2>
-    </div>
+    <Details>
+      <StyledParagraphText>Name: {details?.Name}</StyledParagraphText>
+      <StyledParagraphText>Nationality: {details?.Nationality}</StyledParagraphText>
+      <StyledParagraphText>Birth Year: {details?.Birth_Year}</StyledParagraphText>
+      <StyledParagraphText>Death Year: {details?.Death_Year}</StyledParagraphText>
+    </Details>
   )
 }

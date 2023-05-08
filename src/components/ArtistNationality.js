@@ -27,10 +27,10 @@ export const ArtistNationality = () => {
   }
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0 10px', padding: '20px', justifyContent: 'stretch' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0 10px', padding: '20px', justifyContent: 'center' }}>
       {list.map((artist) => (
         <Link
-          style={{ textDecoration: 'none', flexGrow: '1' }}
+          style={{ textDecoration: 'none' }}
           key={artist.Artist_ID}
           to={`/artists/${artist.Artist_ID}`}><StyledParagraphSpanSmall>{artist.Name}</StyledParagraphSpanSmall>
         </Link>

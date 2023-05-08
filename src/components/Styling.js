@@ -169,3 +169,17 @@ export const Details = styled.div`
   align-items: center;
 `;
 
+export const LottieContainer = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+  & > div {
+    width: 90vw;
+
+  @media (min-width: 1024px) {
+    width: 50vw;
+  }
+  }
+`;
+

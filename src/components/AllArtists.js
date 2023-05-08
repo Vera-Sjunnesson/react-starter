@@ -13,12 +13,13 @@ export const AllArtists = () => {
       .then((res) => res.json())
       .then((data) => {
         setList(data.body.artistsMoma);
-        setLoading(false);
       })
-      .catch((error) => {
-        console.error(error);
-        setLoading(false);
-      });
+      .catch((e) => {
+        console.error(console.error(e))
+      })
+      .finally(() => {
+        setTimeout(() => setLoading(false), 1500)
+      })
   }, []);
 
   if (loading) {

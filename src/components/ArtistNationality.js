@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Loader } from './Loader';
-import { StyledParagraphSpanSmall } from './Styling';
+import { StyledParagraphSpanSmall, StyledParagraphText } from './Styling';
 
 export const ArtistNationality = () => {
   const [list, setList] = useState([]);
@@ -14,12 +14,13 @@ export const ArtistNationality = () => {
       .then((res) => res.json())
       .then((data) => {
         setList(data.body.artist);
-        setLoading(false);
       })
-      .catch((error) => {
-        console.error(error);
-        setLoading(false);
-      });
+      .catch((e) => {
+        console.error(console.error(e))
+      })
+      .finally(() => {
+        setTimeout(() => setLoading(false), 1500)
+      })
   }, [nationality]);
 
   if (loading) {
@@ -28,13 +29,14 @@ export const ArtistNationality = () => {
 
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0 10px', padding: '20px', justifyContent: 'center' }}>
-      {list.map((artist) => (
-        <Link
-          style={{ textDecoration: 'none' }}
-          key={artist.Artist_ID}
-          to={`/artists/${artist.Artist_ID}`}><StyledParagraphSpanSmall>{artist.Name}</StyledParagraphSpanSmall>
-        </Link>
-      ))}
+      {list === []
+        ? <StyledParagraphText>Sorry, nationality not found</StyledParagraphText>
+        : list.map((artist) => (
+          <Link
+            style={{ textDecoration: 'none' }}
+            key={artist.Artist_ID}
+            to={`/artists/${artist.Artist_ID}`}><StyledParagraphSpanSmall>{artist.Name}</StyledParagraphSpanSmall>
+          </Link>))}
     </div>
   );
 };

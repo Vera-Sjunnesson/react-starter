@@ -16,11 +16,17 @@ export const FindArtist = () => {
   }, [name]);
 
   return (
-    <Details>
-      <StyledParagraphText>Name: {details?.Name}</StyledParagraphText>
-      <StyledParagraphText>Nationality: {details?.Nationality}</StyledParagraphText>
-      <StyledParagraphText>Birth Year: {details?.Birth_Year}</StyledParagraphText>
-      <StyledParagraphText>Death Year: {details?.Death_Year}</StyledParagraphText>
+      <Details>
+      {!details ? (
+        <StyledParagraphText>Sorry, artist not found</StyledParagraphText>
+      ) : (
+        <>
+          <StyledParagraphText>Name: {details?.Name}</StyledParagraphText>
+          <StyledParagraphText>Nationality: {details?.Nationality}</StyledParagraphText>
+          <StyledParagraphText>Birth Year: {details?.Birth_Year}</StyledParagraphText>
+          <StyledParagraphText>Death Year: {details?.Death_Year}</StyledParagraphText>
+        </>
+      )}
     </Details>
   )
 }

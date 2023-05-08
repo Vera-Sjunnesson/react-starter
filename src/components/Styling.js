@@ -160,7 +160,7 @@ export const Select = styled.select`
   border-radius: 5px;
   padding: 5px 10px;
   outline: none;
-  width: 134px;
+  width: 139px;
 `;
 
 export const Details = styled.div`
